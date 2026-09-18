@@ -1,46 +1,352 @@
+# HTML Lab — Everything I Have Learned So Far
+
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>title</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="you only write a trunket description for the search engine.">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <!--
+      DOCTYPE declaration:
+      Tells the browser this is an HTML document using modern standards.
+    -->
+
+    <meta charset="UTF-8" />
+
+    <!-- Metadata: information ABOUT the page, not visible page content. -->
+    <meta
+      name="description"
+      content="An HTML learning lab demonstrating the core concepts I have learned so far."
+    />
+
+    <!-- Open Graph: controls information used when this page is shared. -->
+    <meta property="og:title" content="My HTML Learning Lab" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
+    />
+    <meta property="og:url" content="https://example.com/my-html-lab" />
+
+    <title>My HTML Learning Lab</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./index.css" />
+
+    <!-- External JavaScript -->
+    <script src="./index.js"></script>
   </head>
+
   <body>
+    <!--
+      Semantic HTML:
+      Each element communicates the role of its content.
+    -->
+
+    <header id="top" class="site-header">
+      <h1>My HTML Learning Lab</h1>
+
+      <p>
+        A small page where my HTML knowledge becomes a real structure instead
+        of a list of memorized tags.
+      </p>
+
+      <nav aria-label="Main navigation">
+        <a href="#structure" target="_self">Structure</a>
+        <a href="#media" target="_self">Media</a>
+        <a href="#reference" target="_self">Reference</a>
+      </nav>
+    </header>
+
     <main>
-      <h1>h1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <h4>h4</h4>
-      <h5>h5</h5>
-      <h6>h6</h6>
-      <section>
-        <p>this is an anchor element:<a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">anchor</a> in the paragraph element</p>
-        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="you can put image in the anchor elements."></a>
-      </section>
-      <section>
-        <ul>
-          <li>unordered list item 1</li>
-          <li>unordered list item 2</li>
-          <li>unordered list item 3</li>
-        </ul>
+      <!-- =========================
+           SEMANTIC STRUCTURE
+           ========================= -->
+
+      <section id="structure">
+        <h2>HTML Structure</h2>
+
+        <article class="concept-card">
+          <h3>Elements, Attributes, and Nesting</h3>
+
+          <p title="This paragraph demonstrates a global/core attribute.">
+            HTML elements can contain
+            <strong>meaningful structure</strong>
+            and attributes can provide additional information.
+          </p>
+
+          <!-- id = unique identity; class = reusable group/category. -->
+          <div id="html-box" class="concept-card highlighted">
+            <b>Attention:</b>
+            <span>this text demonstrates the difference between visual
+            attention and semantic importance.</span>
+          </div>
+
+          <p>
+            <em>Strong</em> semantic importance and
+            <strong>strong importance</strong>
+            are not the same idea as simply changing appearance with CSS.
+          </p>
+
+          <hr />
+
+          <p>
+            This is a simple example of
+            <mark>grouping content</mark>
+            inside a generic
+            <code>&lt;div&gt;</code>.
+          </p>
+        </article>
+
         <figure>
-        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="you most describe the picture in the alt to show when their is no internet.">
-        <figcaption>figure element means:<br> the codes in the figure element are on their own .</figcaption>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+            alt="A relaxed cat lying down"
+            width="320"
+          />
+          <figcaption>
+            <code>&lt;figure&gt;</code> groups self-contained content and
+            <code>&lt;figcaption&gt;</code> provides its caption.
+          </figcaption>
         </figure>
       </section>
-      <section>
+
+      <!-- =========================
+           LISTS AND REFERENCES
+           ========================= -->
+
+      <section id="reference">
+        <h2>Lists, Links, and References</h2>
+
+        <ul>
+          <li>HTML structure</li>
+          <li>Attributes</li>
+          <li>Semantic elements</li>
+        </ul>
+
         <ol>
-          <li>ordered list item 1</li>
-          <li>ordered list item 2</li>
-          <li>ordered list item 3</li>
+          <li>Learn the concept.</li>
+          <li>Build an example.</li>
+          <li>Connect it to a real project.</li>
         </ol>
+
+        <p>
+          A normal
+          <a
+            href="https://www.freecodecamp.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            external link
+          </a>
+          can open another browsing context.
+        </p>
+
+        <!-- Fragment link: points to an element by its id. -->
+        <a href="#top">Back to the top</a>
+
+        <!-- Character references / entities -->
+        <p>
+          Entities:
+          &lt; &gt; &amp; &quot; &copy;
+        </p>
+
+        <!-- Numeric character references -->
+        <p>
+          Decimal:
+          &#60;
+
+          Hexadecimal:
+          &#x3C;
+
+          Both represent:
+          &lt;
+        </p>
+
+        <!--
+          Character reference idea:
+          &lt;   -> <
+          &#60; -> <
+          &#x3C; -> <
+        -->
       </section>
 
-      <div></div>
+      <!-- =========================
+           INPUTS AND BOOLEAN ATTRIBUTES
+           ========================= -->
+
+      <section>
+        <h2>Inputs and Boolean Attributes</h2>
+
+        <!--
+          input is a void element.
+          It does not need a closing tag.
+        -->
+
+        <input type="text" placeholder="Type something..." />
+
+        <br />
+
+        <input
+          id="email"
+          class="user-input"
+          type="email"
+          value="readonly@example.com"
+          readonly
+        />
+
+        <br />
+
+        <input type="password" placeholder="Password" />
+
+        <br />
+
+        <input type="number" min="0" max="100" />
+
+        <br />
+
+        <input type="date" />
+
+        <br />
+
+        <input type="color" />
+
+        <br />
+
+        <input type="range" />
+
+        <br />
+
+        <input type="file" />
+
+        <br />
+
+        <input type="checkbox" checked />
+
+        <label>Remember me</label>
+
+        <br />
+
+        <input type="radio" name="example" />
+        <input type="radio" name="example" />
+
+        <br />
+
+        <input type="tel" required placeholder="Required phone number" />
+
+        <br />
+
+        <button type="button" disabled>Disabled button</button>
+
+        <!--
+          Boolean attributes:
+          checked  -> true when present
+          required -> true when present
+          readonly -> true when present
+          disabled -> true when present
+        -->
+      </section>
+
+      <!-- =========================
+           MEDIA
+           ========================= -->
+
+      <section id="media">
+        <h2>Media and Replaced Elements</h2>
+
+        <!-- Audio -->
+        <audio controls loop>
+          <source
+            src="https://cdn.freecodecamp.org/curriculum/drum-machine/Heater-1.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support this audio element.
+        </audio>
+
+        <br />
+
+        <!-- Video -->
+        <video controls muted width="480" poster="">
+          <source src="./video.mp4" type="video/mp4" />
+          Your browser does not support this video element.
+        </video>
+
+        <br />
+
+        <!--
+          iframe:
+          embeds another page/document inside this page.
+          It is NOT itself the video.
+        -->
+        <iframe
+          title="Embedded freeCodeCamp page"
+          width="425"
+          height="250"
+          src="https://www.freecodecamp.org"
+          style="border: 1px solid black"
+        ></iframe>
+      </section>
+
+      <!-- =========================
+           SVG
+           ========================= -->
+
+      <section>
+        <h2>SVG — Vector Graphics</h2>
+
+        <!--
+          SVG is vector-based.
+          viewBox defines the internal coordinate system.
+        -->
+        <svg
+          width="120"
+          height="120"
+          viewBox="0 0 24 24"
+          role="img"
+          aria-label="Simple heart icon"
+        >
+          <path
+            d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.25 1.2 5.5 3.5C14.25 6.2 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"
+          />
+        </svg>
+
+        <!--
+          Raster  -> pixels
+          Vector  -> shapes / paths
+          SVG     -> scalable vector graphics
+        -->
+      </section>
+
+      <!-- =========================
+           META / SEO / SHARING
+           ========================= -->
+
+      <section>
+        <h2>Metadata, SEO, and Open Graph</h2>
+
+        <p>
+          The page also contains metadata in the
+          <code>&lt;head&gt;</code>.
+        </p>
+
+        <p>
+          <strong>Meta description</strong> describes the page for metadata
+          consumers and may be used in a search result snippet.
+        </p>
+
+        <p>
+          <strong>Open Graph</strong> provides sharing metadata such as a
+          title, type, image, and URL.
+        </p>
+      </section>
     </main>
-    <footer>footer is the last part of your body</footer>
+
+    <footer>
+      <p>
+        Built while learning:
+        HTML → CSS → JavaScript → Full-Stack
+      </p>
+
+      <a href="#top">Return to top</a>
+    </footer>
   </body>
 </html>
-
+```
